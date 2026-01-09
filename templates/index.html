@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Student Performance Predictor</h1>
+    <p class="subtitle">
+        Predict exam scores using study habits & academic history
+    </p>
+
+    <form method="POST">
+        <div class="field">
+            <label>Hours Studied (per day)</label>
+            <input type="number" step="0.1" name="hours" required>
+        </div>
+
+        <div class="field">
+            <label>Attendance (%)</label>
+            <input type="number" step="0.1" name="attendance" required>
+        </div>
+
+        <div class="field">
+            <label>Previous Exam Score</label>
+            <input type="number" step="0.1" name="prev_score" required>
+        </div>
+        <div class="field">
+            <label>Daily sleep hour</label>
+            <input type="number" step="0.1" name="sleep" required>
+        </div>
+        <button type="submit">Predict Score</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>🎯 Predicted Score</h2>
+        <p class="score">{{ prediction }}</p>
+
+        <p>
+            <strong>Highly accurate if you are (average student):</strong><br>
+            {{ range_avg[0] }} – {{ range_avg[1] }}
+        </p>
+
+        <p>
+            <strong>Highly accurate if you are (above-average student):</strong><br>
+            {{ range_above[0] }} – {{ range_above[1] }}
+        </p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
