@@ -96,8 +96,7 @@ Git & GitHub (Version Control & Deployment)
 
 ### Clone the Repository
 
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Samin-Saikia/Intelligent-Student-Performance-Predictor
 
 
 ### Install Dependencies
@@ -156,3 +155,4 @@ Model explainability (feature importance)
 
 Samin Saikia
 Aspiring Developer & ML Enthusiast
+
